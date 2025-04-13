@@ -69,6 +69,19 @@ export async function DELETE(req) {
       });
     }
 
+    const [reservations] = await pool.query(
+      "SELECT * FROM reservations WHERE room_id = ?",
+      [id]
+    );
+    if (reservations.length > 0) {
+      return new Response(
+        JSON.stringify({
+          message: "Cannot delete room. It has active reservations.",
+        }),
+        { status: 400 }
+      );
+    }
+
     const [result] = await pool.query("DELETE FROM rooms WHERE id = ?", [id]);
 
     if (result.affectedRows > 0) {

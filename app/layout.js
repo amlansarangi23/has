@@ -43,6 +43,9 @@ const Navbar = () => {
             <Link href="/billing" className="text-white hover:text-indigo-300">
               Billing
             </Link>
+            <Link href="/rooms" className="text-white hover:text-indigo-300">
+              Admin
+            </Link>
           </div>
         </div>
       </div>
