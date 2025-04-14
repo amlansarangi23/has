@@ -14,8 +14,8 @@ const credentials = {
 export default function CateringPage() {
   const [role, setRole] = useState(null);
   const [selectedRole, setSelectedRole] = useState("Caterer");
-  const [loginId, setLoginId] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const [loginId, setLoginId] = useState("caterer123");
+  const [loginPassword, setLoginPassword] = useState("catererpass");
   const [loginError, setLoginError] = useState("");
 
   const [tokenNumber, setTokenNumber] = useState("");
@@ -52,7 +52,10 @@ export default function CateringPage() {
   };
 
   const handleAddCateringItem = () => {
-    setCateringItems([...cateringItems, { item_name: "", quantity: 1, price: 0 }]);
+    setCateringItems([
+      ...cateringItems,
+      { item_name: "", quantity: 1, price: 0 },
+    ]);
   };
 
   const handleSubmitCatering = async () => {
@@ -141,7 +144,10 @@ export default function CateringPage() {
         </h2>
 
         {cateringItems.map((item, index) => (
-          <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div
+            key={index}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4"
+          >
             <input
               type="text"
               name="item_name"
@@ -201,11 +207,21 @@ export default function CateringPage() {
           className="rounded-lg shadow-lg"
         >
           <div>
-            <Image src="/menuimg1.jpg" alt="Menu Page 1" width={500} height={300} />
+            <Image
+              src="/menuimg1.jpg"
+              alt="Menu Page 1"
+              width={500}
+              height={300}
+            />
             <p className="legend">Menu Page 1</p>
           </div>
           <div>
-            <Image src="/menuimg2.jpg" alt="Menu Page 2" width={500} height={300} />
+            <Image
+              src="/menuimg2.jpg"
+              alt="Menu Page 2"
+              width={500}
+              height={300}
+            />
             <p className="legend">Menu Page 2</p>
           </div>
         </Carousel>

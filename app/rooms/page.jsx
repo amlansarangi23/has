@@ -11,8 +11,8 @@ const credentials = {
 const RoomsPage = () => {
   const [role, setRole] = useState(null);
   const [selectedRole, setSelectedRole] = useState("Admin");
-  const [loginId, setLoginId] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const [loginId, setLoginId] = useState("admin123");
+  const [loginPassword, setLoginPassword] = useState("adminpass");
   const [loginError, setLoginError] = useState("");
 
   const [rooms, setRooms] = useState([]);

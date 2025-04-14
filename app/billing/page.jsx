@@ -11,8 +11,8 @@ const credentials = {
 const BillingPage = () => {
   const [role, setRole] = useState(null);
   const [selectedRole, setSelectedRole] = useState("Receptionist");
-  const [loginId, setLoginId] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const [loginId, setLoginId] = useState("reception123");
+  const [loginPassword, setLoginPassword] = useState("receptionpass");
   const [loginError, setLoginError] = useState("");
 
   const [tokenNumber, setTokenNumber] = useState("");

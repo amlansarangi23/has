@@ -10,8 +10,8 @@ const credentials = {
 
 export default function ReservationPage() {
   const [role, setRole] = useState(null);
-  const [loginId, setLoginId] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const [loginId, setLoginId] = useState("reception123");
+  const [loginPassword, setLoginPassword] = useState("receptionpass");
   const [loginError, setLoginError] = useState("");
   const [selectedRole, setSelectedRole] = useState("Receptionist");
 
@@ -130,16 +130,16 @@ export default function ReservationPage() {
   return (
     <div className="min-h-screen bg-gray-100 p-6 text-black">
       <div className="flex justify-end mb-4">
-    <button
-      onClick={() => {
-        localStorage.removeItem("role");
-        setRole(null);
-      }}
-      className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-    >
-      Logout
-    </button>
-  </div>
+        <button
+          onClick={() => {
+            localStorage.removeItem("role");
+            setRole(null);
+          }}
+          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+        >
+          Logout
+        </button>
+      </div>
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center text-indigo-600 mb-6">
           Check-in
@@ -167,7 +167,9 @@ export default function ReservationPage() {
           </div>
 
           <div>
-            <label className="block mb-2 font-semibold">Frequent Guest ID</label>
+            <label className="block mb-2 font-semibold">
+              Frequent Guest ID
+            </label>
             <input
               type="text"
               value={frequentGuestId}
